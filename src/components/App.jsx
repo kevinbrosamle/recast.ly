@@ -1,5 +1,5 @@
 
-var defaultVideo = {
+var video = {
   id: {
     videoId: 'dQw4w9WgXcQ'
   },
@@ -12,12 +12,17 @@ var defaultVideo = {
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      defaultVideo: video
+    };
   }
+
   render() {
     return (
       <div>
         <div className="col-md-7">
-          <VideoPlayer video={this.props === {} ? this.props : defaultVideo}/>
+          <VideoPlayer video={this.state.defaultVideo}/>
         </div>
         <div className="col-md-5">
           <VideoList videos={window.exampleVideoData}/>
