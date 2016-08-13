@@ -1,25 +1,21 @@
-
-var defaultVideo = {
-  id: {
-    videoId: 'dQw4w9WgXcQ'
-  },
-  snippet: {
-    title: 'Rick Astley - Never Gonna Give You Up',
-    description: 'Rick Astley - Never Gonna Give You Up (Official Music Video)'
-  }
-};
-
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      video: defaultVideo
+      video: {
+        id: {
+          videoId: 'dQw4w9WgXcQ'
+        },
+        snippet: {
+          title: 'Rick Astley - Never Gonna Give You Up',
+          description: 'Rick Astley - Never Gonna Give You Up (Official Music Video)'
+        }
+      }
     };
   }
 
   onVideoChange(video) {
-    console.log(this, 'this');
     this.setState({video: video});
   }
 
@@ -32,7 +28,7 @@ class App extends React.Component {
         <div className="col-md-5">
           <VideoList 
             videos={window.exampleVideoData}
-            callbackParent={this.onVideoChange}
+            callbackParent={this.onVideoChange.bind(this)}
             />
         </div>
       </div>
