@@ -1,16 +1,7 @@
 var VideoListEntry = (props) => {
 
   var onTitleClick = (event) => {
-    var video = {
-      id: {
-        videoId: props.video.id.videoId
-      },
-      snippet: {
-        title: props.video.snippet.title,
-        description: props.video.snippet.description
-      }
-    };
-    props.callbackParent(video);
+    props.callbackParent(props.video); // test to acces video props in video entry
   };
 
   return (
