@@ -15,8 +15,11 @@ class App extends React.Component {
     super(props);
   }
   render() {
+    console.log(this.props, 'render');
     return (
-      <div></div>
+      <div>
+        <VideoPlayer video={this.props.searchYouTube}/>
+      </div>
     );
   }
 }
