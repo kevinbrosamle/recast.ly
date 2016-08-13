@@ -1,5 +1,5 @@
 
-var video = {
+var defaultVideo = {
   id: {
     videoId: 'dQw4w9WgXcQ'
   },
@@ -14,18 +14,26 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      defaultVideo: video
+      video: defaultVideo
     };
+  }
+
+  onVideoChange(video) {
+    console.log(this, 'this');
+    this.setState({video: video});
   }
 
   render() {
     return (
       <div>
         <div className="col-md-7">
-          <VideoPlayer video={this.state.defaultVideo}/>
+          <VideoPlayer video={this.state.video}/>
         </div>
         <div className="col-md-5">
-          <VideoList videos={window.exampleVideoData}/>
+          <VideoList 
+            videos={window.exampleVideoData}
+            callbackParent={this.onVideoChange}
+            />
         </div>
       </div>
     );

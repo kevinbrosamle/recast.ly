@@ -1,7 +1,17 @@
+var testVideo = {
+  id: {
+    videoId: 'dQw4w9WgXcQ'
+  },
+  snippet: {
+    title: 'test title',
+    description: 'test description'
+  }
+};
+
 var VideoListEntry = (props) => {
 
   var onTitleClick = (event) => {
-    console.log('clicked');
+    props.callbackParent(testVideo);
   };
 
   return (
