@@ -1,5 +1,6 @@
 class App extends React.Component {
   constructor(props) {
+    console.log(props);
     super(props);
 
     this.state = {
@@ -27,7 +28,7 @@ class App extends React.Component {
         </div>
         <div className="col-md-5">
           <VideoList 
-            videos={window.exampleVideoData}
+            videos={console.log(this.props.searchYouTube, 'in here')}
             callbackParent={this.onVideoChange.bind(this)}
             />
         </div>
